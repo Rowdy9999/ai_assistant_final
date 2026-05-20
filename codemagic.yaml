@@ -1,0 +1,18 @@
+
+workflows:
+  android-apk:
+    name: Android APK
+    max_build_duration: 60
+    environment:
+      flutter: stable
+      groups:
+        - android_signing # If the user adds signing keys later
+    scripts:
+      - name: Get Flutter packages
+        script: |
+          flutter pub get
+      - name: Build APK
+        script: |
+          flutter build apk --release
+    artifacts:
+      - build/app/outputs/flutter-apk/*.apk
