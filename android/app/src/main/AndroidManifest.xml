@@ -13,6 +13,11 @@
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+            
+            <!-- This is the fix for the V1 embedding error -->
+            <meta-data
+                android:name="flutterEmbedding"
+                android:value="2" />
         </activity>
     </application>
 </manifest>
