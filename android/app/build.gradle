@@ -5,13 +5,9 @@ if (localPropertiesFile.exists()) {
     localPropertiesFile.withInputStream { localProperties.load(it) }
 }
 
-apply plugin: 'com.android.application'
-apply plugin: 'kotlin-android'
-
 android {
-    compileSdkVersion 34
     namespace "com.ai.assistant"
-
+    compileSdkVersion 34
     defaultConfig {
         applicationId "com.ai.assistant"
         minSdkVersion 26
@@ -19,7 +15,6 @@ android {
         versionCode 1
         versionName "1.0"
     }
-
     buildTypes {
         release {
             signingConfig signingConfigs.debug
@@ -29,5 +24,5 @@ android {
 
 dependencies {
     implementation "org.jetbrains.kotlin:kotlin-stdlib:1.8.22"
-    implementation "dev.rikka.shizuku:api:13.1.0"
+    implementation 'dev.rikka.shizuku:api:13.1.0'
 }
